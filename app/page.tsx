@@ -2,7 +2,22 @@ import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
 import CryptoChart from './components/CryptoChart';
+import Head from 'next/head';
+import park1 from '../public/park-1.png'
+import park2 from '../public/park-2.png'
 
+
+
+<>
+<meta property="fc:frame" content="vNext" />
+<meta property="fc:frame:image" content='../public/park-1.png' />
+<meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
+<meta property="og:image" content="../public/park-2.png" />
+<meta property="fc:frame:button:1" content="Green" />
+<meta property="fc:frame:button:2" content="Purple" />
+<meta property="fc:frame:button:3" content="Red" />
+<meta property="fc:frame:button:4" content="Blue" />
+</>
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -27,6 +42,7 @@ const frameMetadata = getFrameMetadata({
 });
 
 export const metadata: Metadata = {
+  
   title: 'Frame Speedrun',
   description: 'LFG',
   openGraph: {
